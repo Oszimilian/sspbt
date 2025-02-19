@@ -1,0 +1,20 @@
+tools/gdbinit:21: Error in sourced command file:
+firmware.elf: Datei oder Verzeichnis nicht gefunden.
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+gdb.error: localhost:3333: Die Wartezeit für die Verbindung ist abgelaufen.
+tools/gdbinit:54: Error in sourced command file:
+Error while executing Python code.
+main () at main.c:45
+Haltepunkt 1 at 0x80001ac: file main.c, line 39.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000678 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:39
+ss_pwm_init (pin_id=pin_id@entry=0x0, frequency=frequency@entry=0x3e8, fsys=fsys@entry=0xf42400) at ss/src/ss_pwm.c:143
+$1 = 0xc00
+$2 = 0xc00
+$3 = 0x40000c00
+$4 = 1000000000000000000110000000000
+$5 = 0x40000c00
