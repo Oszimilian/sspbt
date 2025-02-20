@@ -18,3 +18,29 @@ $2 = 0xc00
 $3 = 0x40000c00
 $4 = 1000000000000000000110000000000
 $5 = 0x40000c00
+Warnung: Source file is more recent than executable.
+Error in sys.excepthook:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/apport_python_hook.py", line 34, in apport_excepthook
+    def apport_excepthook(exc_type, exc_obj, exc_tb):
+KeyboardInterrupt
+
+Original exception was:
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+gdb.error: localhost:3333: Die Wartezeit für die Verbindung ist abgelaufen.
+tools/gdbinit:54: Error in sourced command file:
+Error while executing Python code.
+Warnung: Source file is more recent than executable.
+Error in sys.excepthook:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/apport_python_hook.py", line 34, in apport_excepthook
+    def apport_excepthook(exc_type, exc_obj, exc_tb):
+KeyboardInterrupt
+
+Original exception was:
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+gdb.error: localhost:3333: Die Wartezeit für die Verbindung ist abgelaufen.
+tools/gdbinit:54: Error in sourced command file:
+Error while executing Python code.

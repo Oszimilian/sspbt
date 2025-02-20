@@ -24,27 +24,32 @@
 
 #include "ss_gpio.h"
 #include "ss_pwm.h"
+#include "ss_systick.h"
+#include "ss_can.h"
 
+
+Systick_Handle handle1 = {.timer = 0, .period=10, .tick = 0};
 
 
 int main(void)
 {
 	int i;
 
+	ss_init_systick(160000);
 
-	//uint16_t heartbeat = ss_io_init(PIN('C', 1), GPIO_MODE_AF);
-
-	//uint16_t error = ss_pwm_init(PIN('C', 2), 10000, 16000000);
+	ss_init_can(1, 1000000);
 
 	uint16_t pa2 = ss_pwm_init(PIN('A', 0), 1000, 16000000);
 
+	uint8_t pwm_val = 0;
 
-	/* Blink the LED (PD12) on the board with every transmitted byte. */
+
 	while (1) {
-
+		if (ss_handle_timer(&handle1)) {
+			ss_pwm_write(pa2, pwm_val);
+			pwm_val = (pwm_val == 100)? 0 : pwm_val + 1;
+		}
 		
-
-		ss_pwm_write(pa2, 5);
 	}
 
 	return 0;
