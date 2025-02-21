@@ -25,8 +25,8 @@ OBJS += $(patsubst %.c, %.o, $(wildcard ss/src/*.c))
 
 LDSCRIPT = stm32f4-discovery.ld
 
-#gdb:
-#	gdb-multiarch --tui -silent -x 'tools/gdbinit' -iex 'set auto-load safe-path /'
+gdb:
+	gdb-multiarch --tui -silent -x 'tools/gdbinit' -iex 'set auto-load safe-path /'
 
 include tools/Makefile.include
 

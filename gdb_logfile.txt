@@ -44,3 +44,104 @@ Traceback (most recent call last):
 gdb.error: localhost:3333: Die Wartezeit für die Verbindung ist abgelaufen.
 tools/gdbinit:54: Error in sourced command file:
 Error while executing Python code.
+0x080005a8 in ss_handle_timer (handle=handle@entry=0x20000000 <handle1>) at ss/src/ss_systick.c:20
+Haltepunkt 1 at 0x80001ac: file main.c, line 39.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000a1c msp: 0x20020000
+
+Breakpoint 1, main () at main.c:39
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:137
+Undefined command: "ps".  Try "help".
+ss_can_get_bit_timings (baudrate=baudrate@entry=0xf4240, sjw=sjw@entry=0x2001ffa4, tseg1=tseg1@entry=0x2001ffa8, tseg2=tseg2@entry=0x2001ffac, prescaler=prescaler@entry=0x2001ffa0) at ss/src/ss_can.c:88
+Undefined command: "nn".  Try "help".
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:154
+$1 = 0xc
+$2 = 1100
+$3 = 12
+can_init (canport=canport@entry=0x40006400, ttcm=ttcm@entry=0x0, abom=abom@entry=0x1, awum=awum@entry=0x0, nart=nart@entry=0x0, rflm=rflm@entry=0x0, txfp=txfp@entry=0x0, sjw=0x1, ts1=0xc, ts2=0x3, brp=0x1, loopback=loopback@entry=0x0, silent=silent@entry=0x0) at ../can.c:100
+Undefined command: "nn".  Try "help".
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:168
+ss_handle_timer (handle=handle@entry=0x20000000 <handle1>) at ss/src/ss_systick.c:21
+Haltepunkt 1 at 0x80001ac: file main.c, line 39.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000a1c msp: 0x20020000
+
+Breakpoint 1, main () at main.c:39
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:137
+$1 = <optimized out>
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:168
+Haltepunkt 1 at 0x80001ac: file main.c, line 39.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000a1c msp: 0x20020000
+
+Breakpoint 1, main () at main.c:39
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:137
+can_init (canport=canport@entry=0x40006400, ttcm=ttcm@entry=0x0, abom=abom@entry=0x1, awum=awum@entry=0x0, nart=nart@entry=0x0, rflm=rflm@entry=0x0, txfp=txfp@entry=0x0, sjw=0x1, ts1=0x9, ts2=0x4, brp=0x1, loopback=loopback@entry=0x0, silent=silent@entry=0x0) at ../can.c:100
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:168
+can_filter_id_mask_32bit_init (nr=nr@entry=0x0, id=id@entry=0x0, mask=mask@entry=0x0, fifo=fifo@entry=0x0, enable=enable@entry=0x1) at ../can.c:280
+can_filter_id_mask_32bit_init (nr=nr@entry=0x0, id=id@entry=0x0, mask=mask@entry=0x0, fifo=fifo@entry=0x0, enable=enable@entry=0x1) at ../can.c:280
+Haltepunkt 1 at 0x80001ac: file main.c, line 39.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000a1c msp: 0x20020000
+
+Breakpoint 1, main () at main.c:39
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:137
+Undefined command: "nn".  Try "help".
+can_init (canport=canport@entry=0x40006400, ttcm=ttcm@entry=0x0, abom=abom@entry=0x1, awum=awum@entry=0x0, nart=nart@entry=0x0, rflm=rflm@entry=0x0, txfp=txfp@entry=0x0, sjw=0x1, ts1=0x9, ts2=0x4, brp=0x1, loopback=loopback@entry=0x0, silent=silent@entry=0x0) at ../can.c:100
+Undefined command: "nn".  Try "help".
+$1 = 0x0
+Haltepunkt 2 at 0x8000700: file ../can.c, line 202.
+Continuing.
+
+Breakpoint 2, can_filter_init (nr=nr@entry=0x0, scale_32bit=scale_32bit@entry=0x1, id_list_mode=id_list_mode@entry=0x0, fr1=fr1@entry=0x0, fr2=fr2@entry=0x0, fifo=fifo@entry=0x0, enable=enable@entry=0x1) at ../can.c:203
+can_filter_init (nr=nr@entry=0x0, scale_32bit=scale_32bit@entry=0x1, id_list_mode=id_list_mode@entry=0x0, fr1=fr1@entry=0x0, fr2=fr2@entry=0x0, fifo=fifo@entry=0x0, enable=enable@entry=0x1) at ../can.c:203
+Haltepunkt 1 at 0x80001ac: file main.c, line 39.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000a1c msp: 0x20020000
+
+Breakpoint 1, main () at main.c:39
+0x08000472 in is_fifo_empty (fifo=fifo@entry=0x2000000c <can_receive_fifos>) at ss/src/ss_can.c:231
+Haltepunkt 1 at 0x80001ac: file main.c, line 39.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000a64 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:39
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:137
+$1 = <optimized out>
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:168
+Haltepunkt 1 at 0x80001ac: file main.c, line 39.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000a64 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:39
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:137
+Warnung: Source file is more recent than executable.
+ss_enable_can_rcc (can_interface_id=can_interface_id@entry=0x1) at ss/src/ss_can.c:12
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:146
+ss_enable_can_gpios (can_interface_id=can_interface_id@entry=0x1) at ss/src/ss_can.c:36
+gpio_set_af (gpioport=0x40020400, gpioport@entry=0x40020000, alt_func_num=alt_func_num@entry=0x9, gpios=gpios@entry=0x100) at ../common/gpio_common_f0234.c:183
+gpio_set_af (gpioport=0x40020400, gpioport@entry=0x40020000, alt_func_num=alt_func_num@entry=0x9, gpios=gpios@entry=0x100) at ../common/gpio_common_f0234.c:186
+Haltepunkt 1 at 0x80001ac: file main.c, line 39.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000a64 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:39
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:137
+Warnung: Source file is more recent than executable.
+$1 = 0x40006400
+ss_enable_can_gpios (can_interface_id=can_interface_id@entry=0x1) at ss/src/ss_can.c:36
+$2 = 0x2
+gpio_set_af (gpioport=0x40020400, gpioport@entry=0x40020000, alt_func_num=alt_func_num@entry=0x9, gpios=gpios@entry=0x100) at ../common/gpio_common_f0234.c:183
+$3 = 0x100
+$4 = 100000000
+$5 = 0x9
+Warnung: Error detected on fd 0
+error detected on stdin

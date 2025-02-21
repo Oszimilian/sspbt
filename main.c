@@ -28,8 +28,9 @@
 #include "ss_can.h"
 
 
-Systick_Handle handle1 = {.timer = 0, .period=10, .tick = 0};
+Systick_Handle handle1 = {.timer = 0, .period=20, .tick = 0};
 
+struct Fifo can_receive_fifos[2];
 
 int main(void)
 {
@@ -37,17 +38,30 @@ int main(void)
 
 	ss_init_systick(160000);
 
+	init_fifo(&can_receive_fifos[0]);
+
 	ss_init_can(1, 1000000);
 
-	uint16_t pa2 = ss_pwm_init(PIN('A', 0), 1000, 16000000);
+	uint16_t heartbeat = ss_io_init(PIN('C', 1), SS_GPIO_MODE_OUTPUT);
 
-	uint8_t pwm_val = 0;
+	uint16_t error = ss_io_init(PIN('C', 0), SS_GPIO_MODE_OUTPUT);
+	ss_io_write(error, SS_GPIO_OFF);
+
 
 
 	while (1) {
 		if (ss_handle_timer(&handle1)) {
-			ss_pwm_write(pa2, pwm_val);
-			pwm_val = (pwm_val == 100)? 0 : pwm_val + 1;
+			ss_io_write(heartbeat, SS_GPIO_TOGGLE);
+			struct can_tx_msg can_frame;
+			can_frame.std_id = 19;
+			can_frame.dlc = 1;
+			can_frame.data[0] = 1;
+			ss_can_send(	1,
+							&can_frame);
+		}
+
+		if (!is_fifo_empty(&can_receive_fifos[0])) {
+
 		}
 		
 	}
