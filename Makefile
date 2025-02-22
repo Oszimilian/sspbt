@@ -22,6 +22,7 @@ BINARY = usart
 OBJS		+= main.o
 
 OBJS += $(patsubst %.c, %.o, $(wildcard ss/src/*.c))
+OBJS += $(patsubst %.c, %.o, $(wildcard usr/src/*.c))
 
 LDSCRIPT = stm32f4-discovery.ld
 

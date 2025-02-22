@@ -120,6 +120,7 @@ TGT_CPPFLAGS	+= -MD
 TGT_CPPFLAGS	+= -Wall -Wundef
 TGT_CPPFLAGS	+= $(DEFS)
 TGT_CPPFLAGS	+= -Iss/inc
+TGT_CPPFLAGS	+= -Iusr/inc
 
 
 ###############################################################################

@@ -145,3 +145,172 @@ $4 = 100000000
 $5 = 0x9
 Warnung: Error detected on fd 0
 error detected on stdin
+Warnung: Source file is more recent than executable.
+0x080005b6 in can_init (canport=0x20000000, ttcm=0xcc, abom=0xdb, awum=0x14, nart=0x0, rflm=0xa9, txfp=0x0, sjw=0x0, ts1=0x0, ts2=0xffffffff, brp=0x0, loopback=0x0, silent=0x0) at ../can.c:100
+Haltepunkt 1 at 0x80001ac: file main.c, line 38.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000a64 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:38
+main () at main.c:40
+ss_enable_timer_clock_from_pin_id (pin_id=0xc) at ss/src/ss_pwm.c:113
+ss_init_can (can_interface_id=<optimized out>, baudrate=<optimized out>) at ss/src/ss_can.c:144
+Warnung: Source file is more recent than executable.
+ss_enable_can_rcc (can_interface_id=0x1) at ss/src/ss_can.c:16
+ss_enable_can_gpios (can_interface_id=0x0) at ss/src/ss_can.c:36
+ss_enable_can_gpios (can_interface_id=<optimized out>) at ss/src/ss_can.c:53
+Warnung: Source file is more recent than executable.
+ss_enable_can_gpios (can_interface_id=<optimized out>) at ss/src/ss_can.c:53
+Haltepunkt 1 at 0x80001ac: file main.c, line 38.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000a64 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:38
+main () at main.c:40
+ss_enable_timer_clock_from_pin_id (pin_id=0xc) at ss/src/ss_pwm.c:113
+ss_init_can (can_interface_id=<optimized out>, baudrate=<optimized out>) at ss/src/ss_can.c:144
+Warnung: Source file is more recent than executable.
+Continuing.
+
+Program received signal SIGINT, Interrupt.
+0x0800020a in ss_enable_can_rcc (can_interface_id=0x1) at ss/src/ss_can.c:10
+main () at main.c:50
+ss_enable_timer_clock_from_pin_id (pin_id=0xffff) at ss/src/ss_pwm.c:129
+main () at main.c:50
+Warnung: Source file is more recent than executable.
+main () at main.c:50
+Haltepunkt 1 at 0x80001ac: file main.c, line 38.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000a64 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:38
+main () at main.c:53
+Haltepunkt 1 at 0x80001ac: file main.c, line 39.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000a60 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:39
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:138
+can_init (canport=canport@entry=0x40006400, ttcm=ttcm@entry=0x0, abom=abom@entry=0x1, awum=awum@entry=0x0, nart=nart@entry=0x0, rflm=rflm@entry=0x0, txfp=txfp@entry=0x0, sjw=0x1, ts1=0x9, ts2=0x4, brp=0x1, loopback=loopback@entry=0x0, silent=silent@entry=0x0) at ../can.c:100
+can_init (canport=canport@entry=0x40006400, ttcm=ttcm@entry=0x0, abom=abom@entry=0x1, awum=awum@entry=0x0, nart=nart@entry=0x0, rflm=rflm@entry=0x0, txfp=txfp@entry=0x0, sjw=<optimized out>, ts1=<optimized out>, ts2=<optimized out>, brp=<optimized out>, loopback=loopback@entry=0x0, silent=silent@entry=0x0) at ../can.c:168
+Haltepunkt 1 at 0x80001ac: file main.c, line 39.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000a60 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:39
+is_fifo_empty (fifo=fifo@entry=0x2000000c <can_receive_fifos>) at ss/src/ss_can.c:229
+Haltepunkt 1 at 0x80001ac: file main.c, line 39.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000a68 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:39
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:138
+can_init (canport=canport@entry=0x40006400, ttcm=ttcm@entry=0x0, abom=abom@entry=0x1, awum=awum@entry=0x0, nart=nart@entry=0x0, rflm=rflm@entry=0x0, txfp=txfp@entry=0x0, sjw=0x0, ts1=0x80000, ts2=0x300000, brp=0x1, loopback=loopback@entry=0x0, silent=silent@entry=0x0) at ../can.c:100
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:167
+$1 = <optimized out>
+Error in sys.excepthook:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/apport_python_hook.py", line 34, in apport_excepthook
+    def apport_excepthook(exc_type, exc_obj, exc_tb):
+KeyboardInterrupt
+
+Original exception was:
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+gdb.error: localhost:3333: Die Wartezeit für die Verbindung ist abgelaufen.
+tools/gdbinit:54: Error in sourced command file:
+Error while executing Python code.
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+gdb.error: localhost:3333: Die Wartezeit für die Verbindung ist abgelaufen.
+tools/gdbinit:54: Error in sourced command file:
+Error while executing Python code.
+0x08000478 in is_fifo_empty (fifo=fifo@entry=0x2000000c <can_receive_fifos>) at ss/src/ss_can.c:230
+Haltepunkt 1 at 0x80001ac: file main.c, line 39.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000a68 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:39
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:138
+can_init (canport=canport@entry=0x40006400, ttcm=ttcm@entry=0x0, abom=abom@entry=0x1, awum=awum@entry=0x0, nart=nart@entry=0x0, rflm=rflm@entry=0x0, txfp=txfp@entry=0x0, sjw=0x0, ts1=0x80000, ts2=0x300000, brp=0x1, loopback=loopback@entry=0x0, silent=silent@entry=0x0) at ../can.c:100
+$1 = 0x0
+$2 = 0x380000
+$3 = <optimized out>
+$4 = <optimized out>
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:167
+$5 = 0x80000
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:167
+Haltepunkt 1 at 0x80001ac: file main.c, line 39.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000a68 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:39
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:138
+can_init (canport=canport@entry=0x40006400, ttcm=ttcm@entry=0x0, abom=abom@entry=0x1, awum=awum@entry=0x0, nart=nart@entry=0x0, rflm=rflm@entry=0x0, txfp=txfp@entry=0x0, sjw=0x0, ts1=0x80000, ts2=0x300000, brp=0x1, loopback=loopback@entry=0x0, silent=silent@entry=0x0) at ../can.c:100
+$1 = 0x80000
+$2 = <optimized out>
+can_init (canport=canport@entry=0x40006400, ttcm=ttcm@entry=0x0, abom=abom@entry=0x1, awum=awum@entry=0x0, nart=nart@entry=0x0, rflm=rflm@entry=0x0, txfp=txfp@entry=0x0, sjw=<optimized out>, ts1=<optimized out>, ts2=<optimized out>, brp=<optimized out>, loopback=loopback@entry=0x0, silent=silent@entry=0x0) at ../can.c:172
+Haltepunkt 1 at 0x80001ac: file main.c, line 39.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000a68 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:39
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:138
+ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:167
+Haltepunkt 1 at 0x80001ac: file main.c, line 39.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000a68 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:39
+main () at main.c:45
+Haltepunkt 1 at 0x80001ac: file main.c, line 39.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000a68 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:39
+Haltepunkt 2 at 0x80003a8: file ss/src/ss_can.c, line 151.
+Continuing.
+
+Breakpoint 2, ss_init_can (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:151
+can_init (canport=canport@entry=0x40006400, ttcm=ttcm@entry=0x0, abom=abom@entry=0x1, awum=awum@entry=0x0, nart=nart@entry=0x0, rflm=rflm@entry=0x0, txfp=txfp@entry=0x0, sjw=0x0, ts1=0x80000, ts2=0x300000, brp=0x1, loopback=loopback@entry=0x0, silent=silent@entry=0x0) at ../can.c:100
+$1 = 0x80000
+$2 = 0x80000
+$3 = <optimized out>
+$4 = <optimized out>
+Warnung: Source file is more recent than executable.
+0x0800048a in is_fifo_empty (fifo=fifo@entry=0x2000000c <can_receive_fifos>) at ss/src/ss_can.c:268
+Haltepunkt 1 at 0x80001ac: file main.c, line 39.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000abc msp: 0x20020000
+
+Breakpoint 1, main () at main.c:39
+ss_can_init (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:138
+0x0800021c in main () at main.c:65
+Haltepunkt 1 at 0x80001ac: file main.c, line 41.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000fd8 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:41
+ss_can_init (can_interface_id=can_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss_can.c:138
+main () at main.c:47
+Haltepunkt 2 at 0x80008c2: file usr/src/ssvesc.c, line 8.
+Continuing.
+
+Breakpoint 2, ssvesc_handle (can_frame=can_frame@entry=0x2001ffbc, pwm_pin=pwm_pin@entry=0x0, dir_pin=dir_pin@entry=0x1, en_pin=en_pin@entry=0x2) at usr/src/ssvesc.c:8
+$1 = 0x0
+$2 = (struct can_rx_msg *) 0x2001ffbc
+Only values in memory can be extended with '@'.
+$3 = {std_id = 0x123, ext_id = 0x2f, ide = 0x0, rtr = 0x0, dlc = 0x8, data = "\000\000\000\000\000\000\000", fmi = 0x0}

@@ -67,7 +67,7 @@ int8_t ss_init_can_nvic(uint8_t can_interface_id, uint8_t prio) {
     switch(can_interface_id) {
         case 1:
             nvic_enable_irq(NVIC_CAN1_RX0_IRQ);
-            //nvic_set_priority(NVIC_CAN1_RX0_IRQ, prio);
+            nvic_set_priority(NVIC_CAN1_RX0_IRQ, prio);
             break;
         
         case 2:
@@ -89,9 +89,9 @@ int8_t ss_can_get_bit_timings(uint32_t baudrate, uint32_t* sjw, uint32_t* tseg1,
     switch(baudrate) {
         case 1000000: 
             *prescaler = 1;
-            *tseg1 = 9;
-            *tseg2 = 4;
-            *sjw = 1;
+            *tseg1 = CAN_BTR_TS1_12TQ;
+            *tseg2 = CAN_BTR_TS2_3TQ;
+            *sjw = CAN_BTR_SJW_1TQ;
             break;
 
         case 500000: 
@@ -133,7 +133,7 @@ uint32_t ss_get_can_port_from_id(uint8_t can_interface_id) {
     return can_port;
 }
 
-int8_t ss_init_can(uint8_t can_interface_id, uint32_t baudrate) {
+int8_t ss_can_init(uint8_t can_interface_id, uint32_t baudrate) {
     int8_t status = 0;
     uint32_t prescaler = 0;
     uint32_t sjw = 0;
@@ -146,39 +146,77 @@ int8_t ss_init_can(uint8_t can_interface_id, uint32_t baudrate) {
 
     if (ss_enable_can_rcc(can_interface_id) == -1) status = -1;
 
-    
-
-    
-
     if (ss_can_get_bit_timings(baudrate, &sjw, &tseg1, &tseg2, &prescaler) == -1) status = -1;
 
     can_reset(can_port);
 
-    uint8_t ret = can_init(   can_port,
-                false,
-                true,
-                false,
-                false,
-                false,
-                false,
-                sjw,
-                tseg1,
-                tseg2,
-                prescaler,
-                false,
-                false);
+    uint8_t ret = can_init( can_port,
+                            false,
+                            true,
+                            false,
+                            false,
+                            false,
+                            false,
+                            sjw,
+                            tseg1,
+                            tseg2,
+                            prescaler,
+                            false,
+                            false);
 
-    can_filter_id_mask_32bit_init( 0,
+    
+    can_filter_id_mask_32bit_init(  0,
                                     0,
                                     0,
                                     0,
                                     true);
+    
+
+
 
     if (ss_init_can_nvic(can_interface_id, 1) == -1) status = -1;    
                                     
     can_enable_irq(can_port, CAN_IER_FMPIE0);
+}
+
+int8_t ss_can_add_messages(uint32_t* ids, uint8_t len) {
+    int counter = 0;
+
+    uint32_t std_ids[28];
+    uint32_t std_ids_count = 0;
+    uint32_t ext_ids[28];
+    uint32_t ext_ids_count = 0;
+
+    if (len > 28) return -1;
 
     
+    for (int k = 0; k < len; k++) {
+        if (ids[k] & ~(0x7FF)) {
+            ext_ids[ext_ids_count++] = ids[k];
+        } else {
+            std_ids[std_ids_count++] = ids[k];
+        }
+    }
+
+    
+    int i = 0;
+    while (i < std_ids_count) {
+        uint32_t ida = std_ids[i++];
+        uint32_t idb = (i < std_ids_count) ? std_ids[i++] : 0;
+
+        can_filter_id_list_32bit_init(counter++, ida << 21, idb << 21, 0, true);
+    }
+
+    
+    i = 0;
+    while (i < ext_ids_count) {
+        uint32_t ida = ext_ids[i++];
+        uint32_t idb = (i < ext_ids_count) ? ext_ids[i++] : 0;
+
+        can_filter_id_list_32bit_init(counter++, (ida << 3) | CAN_TIxR_IDE, (idb << 3) | CAN_TIxR_IDE, 1, true);
+    }
+
+    return 0;
 }
 
 int8_t ss_can_read(uint8_t can_interface_id, struct can_rx_msg* can_frame) {
@@ -218,7 +256,7 @@ void can1_rx0_isr(void)
     struct can_rx_msg can_frame;
     ss_can_read(1, &can_frame);
     fifo_add_can_frame(&can_receive_fifos[0], &can_frame);
-    ss_io_write(PIN('C', 0), SS_GPIO_TOGGLE);
+    
 }
 
 
@@ -250,7 +288,7 @@ int8_t fifo_add_can_frame(struct Fifo* fifo, struct can_rx_msg* can_frame) {
     fifo->can_frames[fifo->rear].rtr = can_frame->rtr;
     fifo->can_frames[fifo->rear].dlc = can_frame->dlc;
     fifo->can_frames[fifo->rear].fmi = can_frame->fmi;
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < can_frame->dlc; i++)
         fifo->can_frames[fifo->rear].data[i] = can_frame->data[i];
 
     return 0;
@@ -267,7 +305,7 @@ int8_t fifo_remove_can_frame(struct Fifo* fifo, struct can_rx_msg* can_frame) {
     can_frame->fmi = fifo->can_frames[fifo->front].fmi;
     for (int i = 0; i < 8; i++) {
         can_frame->data[i] = fifo->can_frames[fifo->front].data[i];
-        can_frame->data[i] = 0;
+        fifo->can_frames[fifo->front].data[i] = 0;
     }
 
     if (fifo->front == fifo->rear) {

@@ -27,6 +27,8 @@
 #include "ss_systick.h"
 #include "ss_can.h"
 
+#include "ssvesc.h"
+
 
 Systick_Handle handle1 = {.timer = 0, .period=20, .tick = 0};
 
@@ -40,13 +42,23 @@ int main(void)
 
 	init_fifo(&can_receive_fifos[0]);
 
-	ss_init_can(1, 1000000);
+	ss_can_init(1, 1000000);
+
+	uint32_t msg_ids[] = {0x123, 0x111, 0x33};
+	ss_can_add_messages(msg_ids, 3);
 
 	uint16_t heartbeat = ss_io_init(PIN('C', 1), SS_GPIO_MODE_OUTPUT);
 
 	uint16_t error = ss_io_init(PIN('C', 0), SS_GPIO_MODE_OUTPUT);
 	ss_io_write(error, SS_GPIO_OFF);
 
+	
+	uint16_t pwm_pin = ss_pwm_init(PIN('A', 0), 10000, 16000000);
+	uint16_t dir_pin = ss_io_init(PIN('A', 1), GPIO_MODE_OUTPUT);
+	uint16_t en_pin = ss_io_init(PIN('A', 2), GPIO_MODE_OUTPUT);
+
+
+	uint8_t k = 0;
 
 
 	while (1) {
@@ -58,10 +70,29 @@ int main(void)
 			can_frame.data[0] = 1;
 			ss_can_send(	1,
 							&can_frame);
-		}
+
+			//ss_pwm_write(pwm_pin, k);
+			//k = (k < 100)? k + 10 : 0;
+		}	
 
 		if (!is_fifo_empty(&can_receive_fifos[0])) {
+			
+			struct can_rx_msg can_frame;
+			fifo_remove_can_frame(&can_receive_fifos[0], &can_frame);
 
+			switch(can_frame.std_id) {
+				case 0x123:
+					ssvesc_handle(	&can_frame,
+									pwm_pin,
+									dir_pin,
+									en_pin);
+
+					ss_io_write(PIN('C', 0), SS_GPIO_TOGGLE);
+					break;
+
+				default: break;
+			}
+			 
 		}
 		
 	}
