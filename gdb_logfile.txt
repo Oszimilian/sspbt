@@ -314,3 +314,459 @@ $1 = 0x0
 $2 = (struct can_rx_msg *) 0x2001ffbc
 Only values in memory can be extended with '@'.
 $3 = {std_id = 0x123, ext_id = 0x2f, ide = 0x0, rtr = 0x0, dlc = 0x8, data = "\000\000\000\000\000\000\000", fmi = 0x0}
+0x080009fe in ss_handle_timer (handle=handle@entry=0x20000000 <handle1>) at ss/src/ss_systick.c:20
+Haltepunkt 1 at 0x80001ac: file main.c, line 43.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001188 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:43
+ss_spi_init (spi_interface_id=spi_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss.spi.c:138
+$1 = 0x0
+main () at main.c:60
+main () at main.c:60
+Haltepunkt 1 at 0x80001ac: file main.c, line 43.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001188 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:43
+Warnung: Source file is more recent than executable.
+main () at main.c:43
+Haltepunkt 1 at 0x80001ac: file main.c, line 43.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001188 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:43
+Undefined command: "1q".  Try "help".
+0x08000a50 in ss_handle_timer (handle=handle@entry=0x20000000 <handle1>) at ss/src/ss_systick.c:22
+Haltepunkt 1 at 0x80001ac: file main.c, line 42.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080011c8 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:42
+ss_leds_init () at ss/src/ss_leds.c:5
+ss_io_init (pin_id=pin_id@entry=0x20, mode=mode@entry=0x1) at ss/src/ss_gpio.c:18
+ss_leds_init () at ss/src/ss_leds.c:7
+ss_leds_init () at ss/src/ss_leds.c:13
+Haltepunkt 1 at 0x80001ac: file main.c, line 42.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080011c8 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:42
+main () at main.c:56
+Haltepunkt 1 at 0x80001ac: file main.c, line 42.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080011c8 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:42
+ss_leds_init () at ss/src/ss_leds.c:5
+ss_leds_init () at ss/src/ss_leds.c:12
+Haltepunkt 1 at 0x80001ac: file main.c, line 42.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080011c8 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:42
+ss_leds_init () at ss/src/ss_leds.c:5
+ss_led_heartbeat_off () at ss/src/ss_leds.c:39
+ss_io_write (pin_id=pin_id@entry=0x21, value=value@entry=0x0) at ss/src/ss_gpio.c:24
+gpio_port_write (gpioport=0x40020800, data=0x2) at ../common/gpio_common_all.c:117
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+KeyboardInterrupt: Quit
+tools/gdbinit:54: Error in sourced command file:
+Error while executing Python code.
+ss_handle_timer (handle=handle@entry=0x20000000 <handle1>) at ss/src/ss_systick.c:22
+Haltepunkt 1 at 0x80001ac: file main.c, line 42.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080011c8 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:42
+ss_leds_init () at ss/src/ss_leds.c:5
+main () at main.c:56
+Undefined command: "nq".  Try "help".
+tools/gdbinit:21: Error in sourced command file:
+usart.elf: Datei oder Verzeichnis nicht gefunden.
+tools/gdbinit:21: Error in sourced command file:
+usart.elf: Datei oder Verzeichnis nicht gefunden.
+Undefined command: "qq".  Try "help".
+ss_handle_timer (handle=handle@entry=0x20000000 <handle1>) at ss/src/ss_systick.c:22
+Haltepunkt 1 at 0x80001ac: file main.c, line 42.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080011d4 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:42
+Haltepunkt 2 at 0x800024c: file main.c, line 80.
+Continuing.
+
+Breakpoint 2, main () at main.c:80
+Continuing.
+
+Breakpoint 2, main () at main.c:80
+Continuing.
+
+Program received signal SIGINT, Interrupt.
+is_fifo_empty (fifo=fifo@entry=0x2000000c <can_receive_fifos>) at ss/src/ss_can.c:271
+is_fifo_empty (fifo=fifo@entry=0x2000000c <can_receive_fifos>) at ss/src/ss_can.c:271
+Haltepunkt 1 at 0x80001ac: file main.c, line 42.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080011d4 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:42
+Haltepunkt 2 at 0x800024c: file main.c, line 80.
+Continuing.
+
+Breakpoint 2, main () at main.c:80
+Continuing.
+
+Breakpoint 2, main () at main.c:80
+0x0800104a in spi_read (spi=spi@entry=0x40013000) at ../common/spi_common_all.c:168
+Haltepunkt 1 at 0x80001ac: file main.c, line 43.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001094 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:43
+adcStartup () at usr/src/ads131.c:65
+
+Program received signal SIGINT, Interrupt.
+0x0800104a in spi_read (spi=spi@entry=0x40013000) at ../common/spi_common_all.c:168
+0x0800104a in spi_read (spi=spi@entry=0x40013000) at ../common/spi_common_all.c:168
+Haltepunkt 1 at 0x80001ac: file main.c, line 43.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001094 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:43
+adcStartup () at usr/src/ads131.c:65
+sendCommand (opcode=opcode@entry=0x0) at usr/src/ads131.c:469
+spiSendReceiveByte (data=0x0) at usr/src/ads131.c:98
+
+Program received signal SIGINT, Interrupt.
+0x0800104a in spi_read (spi=spi@entry=0x40013000) at ../common/spi_common_all.c:168
+0x0800104a in spi_read (spi=spi@entry=0x40013000) at ../common/spi_common_all.c:168
+Haltepunkt 1 at 0x80001ac: file main.c, line 43.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001094 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:43
+main () at main.c:63
+Haltepunkt 1 at 0x80001ac: file main.c, line 43.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001094 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:43
+ss_spi_init (spi_interface_id=spi_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss.spi.c:138
+$1 = 0x40013000
+$2 = 0x3
+$3 = 0x0
+$4 = 0x0
+$5 = 0x0
+main () at main.c:55
+adcStartup () at usr/src/ads131.c:65
+sendCommand (opcode=opcode@entry=0x0) at usr/src/ads131.c:469
+spiSendReceiveByte (data=0x0) at usr/src/ads131.c:98
+0x08000980 in spiSendReceiveArrays (num=<optimized out>, rx=<optimized out>, tx=<optimized out>, spi_interface_id=<optimized out>) at usr/src/ads131.c:93
+spiSendReceiveArrays (num=0x1, rx=0x2001ff8f "", tx=0x2001ff8e "", spi_interface_id=0x1) at usr/src/ads131.c:93
+ss_spi_rxtx (spi_interface_id=spi_interface_id@entry=0x1, rx=rx@entry=0x2001ff8f "", tx=tx@entry=0x2001ff8e "", num=num@entry=0x1) at ss/src/ss.spi.c:163
+$6 = 0x40013000
+$7 = 0x0
+spi_send (spi=spi@entry=0x40013000, data=0x0) at ../common/spi_common_all.c:150
+ss_spi_rxtx (spi_interface_id=spi_interface_id@entry=0x1, rx=rx@entry=0x2001ff8f "", tx=tx@entry=0x2001ff8e "", num=num@entry=0x1) at ss/src/ss.spi.c:169
+spi_read (spi=spi@entry=0x40013000) at ../common/spi_common_all.c:168
+
+Program received signal SIGINT, Interrupt.
+0x0800104a in spi_read (spi=spi@entry=0x40013000) at ../common/spi_common_all.c:168
+0x080001f2 in main () at main.c:68
+Haltepunkt 1 at 0x80001ac: file main.c, line 43.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080010a4 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:43
+Warnung: Source file is more recent than executable.
+main () at main.c:79
+Haltepunkt 1 at 0x80001ac: file main.c, line 43.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080010a4 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:43
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+KeyboardInterrupt: Quit
+tools/gdbinit:54: Error in sourced command file:
+Error while executing Python code.
+Quit
+0x08001184 in spi_read (spi=spi@entry=0x40013000) at ../common/spi_common_all.c:168
+Haltepunkt 1 at 0x80001ac: file main.c, line 45.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080011d8 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:45
+Haltepunkt 2 at 0x8000236: file main.c, line 103.
+Continuing.
+
+Breakpoint 2, main () at main.c:103
+$1 = {response = 0x0, crc = 0x0, channel0 = 0x0, channel1 = 0x0, channel2 = 0x0, channel3 = 0x0}
+Continuing.
+
+Breakpoint 2, main () at main.c:103
+Continuing.
+
+Breakpoint 2, main () at main.c:103
+$2 = {response = 0x0, crc = 0x0, channel0 = 0x0, channel1 = 0x0, channel2 = 0x0, channel3 = 0x0}
+readData (DataStruct=DataStruct@entry=0x2000000c <adc_data>) at usr/src/ads131.c:311
+$3 = "\000\000\000"
+0x0800086a in ss_get_spi_port_from_id (spi_interface_id=<optimized out>) at ss/src/ss.spi.c:94
+Haltepunkt 1 at 0x80001ac: file main.c, line 45.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001248 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:45
+Haltepunkt 2 at 0x8000236: file main.c, line 103.
+Continuing.
+
+Breakpoint 2, main () at main.c:103
+$1 = {response = 0xffff, crc = 0xffff, channel0 = 0xffffffff, channel1 = 0xffffffff, channel2 = 0xffffffff, channel3 = 0xffffffff}
+Continuing.
+
+Breakpoint 2, main () at main.c:103
+$2 = {response = 0xffff, crc = 0xffff, channel0 = 0xffffffff, channel1 = 0xffffffff, channel2 = 0xffffffff, channel3 = 0xffffffff}
+main () at main.c:70
+Haltepunkt 1 at 0x80001ac: file main.c, line 45.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001248 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:45
+ss_spi_init (spi_interface_id=spi_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss.spi.c:138
+ss_enable_spi_gpios (spi_interface_id=spi_interface_id@entry=0x1) at ss/src/ss.spi.c:17
+$1 = 0x5
+ss_spi_init (spi_interface_id=spi_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss.spi.c:146
+main () at main.c:57
+readData (DataStruct=DataStruct@entry=0x2000000c <adc_data>) at usr/src/ads131.c:311
+0x08000944 in ss_spi_rxtx (spi_interface_id=spi_interface_id@entry=0x1, rx=rx@entry=0x2001ff97 "\377\226\377\001 \261\v", tx=tx@entry=0x2001ff96 "", num=num@entry=0x1) at ss/src/ss.spi.c:169
+Haltepunkt 1 at 0x80001ac: file main.c, line 45.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001248 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:45
+ss_spi_init (spi_interface_id=spi_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss.spi.c:138
+Undefined command: "".  Try "help".
+spi_init_master (spi=spi@entry=0x40013000, br=0x3, cpol=cpol@entry=0x0, cpha=cpha@entry=0x0, dff=dff@entry=0x0, lsbfirst=lsbfirst@entry=0x0) at ../common/spi_common_v1.c:85
+No symbol "n" in current context.
+$1 = 0x7
+$2 = 0x0
+$3 = 0x4
+Quit
+ss_spi_init (spi_interface_id=spi_interface_id@entry=0x1, baudrate=baudrate@entry=0xf4240) at ss/src/ss.spi.c:153
+main () at main.c:57
+0x08000932 in ss_spi_rxtx (spi_interface_id=spi_interface_id@entry=0x1, rx=rx@entry=0x2001ff97 "", tx=tx@entry=0x2001ff96 "", num=num@entry=0x1) at ss/src/ss.spi.c:164
+Haltepunkt 1 at 0x80001ac: file main.c, line 45.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001248 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:45
+adcStartup () at usr/src/ads131.c:65
+setSYNC_RESET (val=0x1) at usr/src/ads131.c:72
+adcStartup () at usr/src/ads131.c:178
+writeSingleRegister (address=address@entry=0x2, data=data@entry=0x510) at usr/src/ads131.c:263
+Undefined command: "".  Try "help".
+spiSendReceiveArrays (num=0x6, rx=0x2001ffb0 "", tx=0x2001ffa8 "a", spi_interface_id=0x1) at usr/src/ads131.c:93
+writeSingleRegister (address=address@entry=0x2, data=0x511, data@entry=0x510) at usr/src/ads131.c:285
+main () at main.c:70
+readData (DataStruct=DataStruct@entry=0x2000000c <adc_data>) at usr/src/ads131.c:311
+setCS (val=0x0) at usr/src/ads131.c:85
+ss_io_write (pin_id=0x8, value=0x0) at ss/src/ss_gpio.c:24
+data_received () at usr/src/ads131.c:61
+Haltepunkt 1 at 0x80001ac: file main.c, line 45.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001254 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:45
+A syntax error in expression, near `:103'.
+Continuing.
+
+Program received signal SIGINT, Interrupt.
+ss_spi_rxtx (spi_interface_id=spi_interface_id@entry=0x1, rx=rx@entry=0x2001ff97 "", tx=tx@entry=0x2001ff96 "", num=num@entry=0x1) at ss/src/ss.spi.c:167
+spiSendReceiveByte (data=data@entry=0x0) at usr/src/ads131.c:101
+readData (DataStruct=DataStruct@entry=0x2000000c <adc_data>) at usr/src/ads131.c:350
+Undefined command: "nn".  Try "help".
+main () at main.c:70
+$1 = {response = 0x287, crc = 0x202, channel0 = 0xffd4296e, channel1 = 0xff840202, channel2 = 0x20202, channel3 = 0x20202}
+$2 = {response = 0x287, crc = 0x806e, channel0 = 0xffd424ee, channel1 = 0xfffc6ef7, channel2 = 0xff80052c, channel3 = 0xe0002}
+$3 = {response = 0x287, crc = 0x6e, channel0 = 0xffd41d6e, channel1 = 0xffc26ef7, channel2 = 0x3fffff, channel3 = 0x580002}
+0x0800094a in ss_spi_rxtx (spi_interface_id=spi_interface_id@entry=0x1, rx=rx@entry=0x2001ff97 "", tx=tx@entry=0x2001ff96 "", num=num@entry=0x1) at ss/src/ss.spi.c:164
+Haltepunkt 1 at 0x80001ac: file main.c, line 45.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001274 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:45
+Continuing.
+
+Program received signal SIGINT, Interrupt.
+0x08001222 in spi_read (spi=spi@entry=0x40013000) at ../common/spi_common_all.c:168
+ss_spi_rxtx (spi_interface_id=spi_interface_id@entry=0x1, rx=rx@entry=0x2001ff97 "\356\226\377\001 \275\v", tx=tx@entry=0x2001ff96 "", num=num@entry=0x1) at ss/src/ss.spi.c:169
+spiSendReceiveByte (data=data@entry=0x0) at usr/src/ads131.c:107
+readData (DataStruct=DataStruct@entry=0x2000000c <adc_data>) at usr/src/ads131.c:356
+Haltepunkt 2 at 0x8000248: file main.c, line 106.
+Continuing.
+
+Breakpoint 2, main () at main.c:106
+
+Breakpoint 2, main () at main.c:106
+
+Breakpoint 2, main () at main.c:106
+
+Breakpoint 2, main () at main.c:106
+Num     Type           Disp Enb Address    What
+1       breakpoint     keep y   0x080001ac in main at main.c:45
+	breakpoint already hit 1 time
+2       breakpoint     keep y   0x08000248 in main at main.c:106
+	breakpoint already hit 4 times
+Haltepunkt 3 at 0x80001fc: file main.c, line 73.
+Continuing.
+
+Breakpoint 3, main () at main.c:74
+$1 = {response = 0x287, crc = 0x6e, channel0 = 0xffd426ee, channel1 = 0x676ef7, channel2 = 0x4ac, channel3 = 0x1f8002}
+$2 = {std_id = 0x13, ext_id = 0xd3d292a9, ide = 0xfc, rtr = 0xb8, dlc = 0x1, data = "\000\037\200\002\000\000\004\254"}
+Warnung: Source file is more recent than executable.
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+KeyboardInterrupt: Quit
+tools/gdbinit:54: Error in sourced command file:
+Error while executing Python code.
+Undefined command: "qq".  Try "help".
+0x08001222 in spi_read (spi=spi@entry=0x40013000) at ../common/spi_common_all.c:168
+Haltepunkt 1 at 0x80001ac: file main.c, line 45.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001274 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:45
+Haltepunkt 2 at 0x80001fc: file main.c, line 73.
+Continuing.
+
+Breakpoint 2, main () at main.c:74
+$1 = {response = 0x287, crc = 0x6e, channel0 = 0xffd3d76e, channel1 = 0x69eef7, channel2 = 0x464, channel3 = 0xf8002}
+0x08001224 in spi_read (spi=spi@entry=0x40013000) at ../common/spi_common_all.c:168
+Haltepunkt 1 at 0x80001ac: file main.c, line 45.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001274 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:45
+Haltepunkt 2 at 0x8000202: file main.c, line 75.
+Continuing.
+
+Breakpoint 2, main () at main.c:75
+$1 = {std_id = 0x13, ext_id = 0xd3d292a9, ide = 0xfc, rtr = 0xb8, dlc = 0x8, data = "\000\006\000\002\000\000\004F"}
+ss_can_send (can_interface_id=can_interface_id@entry=0x1, can_frame=can_frame@entry=0x2001ffd4) at ss/src/ss_can.c:242
+$2 = 0x40006400
+can_transmit (canport=0x40006400, id=0x13, ext=0x1, rtr=0x1, length=length@entry=0x8, data=data@entry=0x2001ffdf "") at ../can.c:365
+$3 = 0x8
+Undefined command: "nn".  Try "help".
+Undefined command: "nn".  Try "help".
+$4 = 0x0
+$5 = (uint8_t *) 0x2001ffdf ""
+$6 = <optimized out>
+ss_can_send (can_interface_id=can_interface_id@entry=0x1, can_frame=can_frame@entry=0x2001ffd4) at ss/src/ss_can.c:251
+main () at main.c:84
+Continuing.
+
+Breakpoint 2, main () at main.c:75
+ss_can_send (can_interface_id=can_interface_id@entry=0x1, can_frame=can_frame@entry=0x2001ffd4) at ss/src/ss_can.c:242
+$7 = (struct can_tx_msg *) 0x2001ffd4
+$8 = {std_id = 0x13, ext_id = 0xd3d292a9, ide = 0xfc, rtr = 0xb8, dlc = 0x8, data = "\000K\200\002\000\000", <incomplete sequence \327>}
+$9 = 0x0
+$10 = 0x4b
+can_transmit (canport=0x40006400, id=0x13, ext=0x1, rtr=0x1, length=length@entry=0x8, data=data@entry=0x2001ffdf "") at ../can.c:365
+$11 = 0x4b
+$12 = 0x4b
+$13 = 0x4b
+$14 = <optimized out>
+ss_can_send (can_interface_id=can_interface_id@entry=0x1, can_frame=can_frame@entry=0x2001ffd4) at ss/src/ss_can.c:251
+$15 = 0xb8
+spiSendReceiveByte (data=0x0) at usr/src/ads131.c:104
+Haltepunkt 1 at 0x80001ac: file main.c, line 45.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001278 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:45
+Haltepunkt 2 at 0x8000250: file main.c, line 108.
+Continuing.
+
+Breakpoint 2, main () at main.c:108
+Continuing.
+
+Breakpoint 2, main () at main.c:108
+$1 = {response = 0x287, crc = 0x806e, channel0 = 0xffd3d2ee, channel1 = 0xffbc6ef7, channel2 = 0xff800203, channel3 = 0xb8002}
+Continuing.
+
+Breakpoint 2, main () at main.c:108
+readData (DataStruct=DataStruct@entry=0x2000000c <adc_data>) at usr/src/ads131.c:317
+$2 = 0x2
+0x08000a7c in spiSendReceiveByte (data=data@entry=0x0) at usr/src/ads131.c:107
+Haltepunkt 1 at 0x80001ac: file main.c, line 45.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001278 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:45
+Haltepunkt 2 at 0x8000250: file main.c, line 108.
+Continuing.
+
+Breakpoint 2, main () at main.c:108
+readData (DataStruct=DataStruct@entry=0x2000000c <adc_data>) at usr/src/ads131.c:317
+$1 = 0x7f
+readData (DataStruct=DataStruct@entry=0x2000000c <adc_data>) at usr/src/ads131.c:332
+Haltepunkt 1 at 0x80001ac: file main.c, line 45.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001278 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:45
+main () at main.c:45
+Haltepunkt 1 at 0x80001ac: file main.c, line 45.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001278 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:45
+Undefined command: "qq".  Try "help".
+tools/gdbinit:21: Error in sourced command file:
+usart.elf: Datei oder Verzeichnis nicht gefunden.
+ss_handle_timer (handle=handle@entry=0x20000000 <handle1>) at ss/src/ss_systick.c:20
+Haltepunkt 1 at 0x80001ac: file main.c, line 45.
+Anmerkung: Hardware-Haltepunkte für Nur-Lesen-Adressen werden automatisch benutzt.
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080012a8 msp: 0x20020000
+
+Breakpoint 1, main () at main.c:45
+Haltepunkt 2 at 0x8000250: file main.c, line 108.
+Continuing.
+
+Breakpoint 2, main () at main.c:108
+$1 = {response = 0x50f, crc = 0xf494, channel0 = 0xffdda888, channel1 = 0xffdd71ff, channel2 = 0xffddeea7, channel3 = 0xd98}
+Continuing.
+
+Breakpoint 2, main () at main.c:108
+$2 = {response = 0x50f, crc = 0x4ba0, channel0 = 0xffdda8fe, channel1 = 0xffdd726f, channel2 = 0xffddee85, channel3 = 0x7fffff}

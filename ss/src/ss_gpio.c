@@ -24,6 +24,14 @@ void ss_io_write(uint16_t pin_id, uint8_t value) {
     if (value == SS_GPIO_TOGGLE) {
         gpio_toggle(GPIO(PINBANK(pin_id)), BIT(PINNO(pin_id)));
     } else {
-        gpio_port_write(GPIO(PINBANK(pin_id)), BIT(PINNO(pin_id)));
+        if (value == SS_GPIO_OFF) {
+            gpio_clear(GPIO(PINBANK(pin_id)), BIT(PINNO(pin_id)));
+        } else {
+            gpio_set(GPIO(PINBANK(pin_id)), BIT(PINNO(pin_id)));
+        }
     }
+}
+
+uint16_t ss_io_read(uint16_t pin_id) {
+    return gpio_get(GPIO(PINBANK(pin_id)), BIT(PINNO(pin_id)));
 }

@@ -26,53 +26,61 @@
 #include "ss_pwm.h"
 #include "ss_systick.h"
 #include "ss_can.h"
+#include "ss_spi.h"
+#include "ss_leds.h"
 
 #include "ssvesc.h"
+#include "ads131.h"
 
 
 Systick_Handle handle1 = {.timer = 0, .period=20, .tick = 0};
 
 struct Fifo can_receive_fifos[2];
 
+adc_channel_data adc_data;
+
 int main(void)
 {
-	int i;
+	// SYSTICK
+	ss_init_systick(1600);
 
-	ss_init_systick(160000);
-
+	// CAN
 	init_fifo(&can_receive_fifos[0]);
-
 	ss_can_init(1, 1000000);
-
 	uint32_t msg_ids[] = {0x123, 0x111, 0x33};
 	ss_can_add_messages(msg_ids, 3);
 
-	uint16_t heartbeat = ss_io_init(PIN('C', 1), SS_GPIO_MODE_OUTPUT);
-
-	uint16_t error = ss_io_init(PIN('C', 0), SS_GPIO_MODE_OUTPUT);
-	ss_io_write(error, SS_GPIO_OFF);
-
+	// SPI
+	ss_spi_init(1, 1000000);
 	
+	// LEDS
+	ss_leds_init();
+
+	/*
 	uint16_t pwm_pin = ss_pwm_init(PIN('A', 0), 10000, 16000000);
 	uint16_t dir_pin = ss_io_init(PIN('A', 1), GPIO_MODE_OUTPUT);
 	uint16_t en_pin = ss_io_init(PIN('A', 2), GPIO_MODE_OUTPUT);
+	*/
 
+	init_ads131_wrapper();
 
-	uint8_t k = 0;
-
+	adcStartup();
 
 	while (1) {
 		if (ss_handle_timer(&handle1)) {
-			ss_io_write(heartbeat, SS_GPIO_TOGGLE);
+			ss_led_heartbeat_toggle();
+
 			struct can_tx_msg can_frame;
 			can_frame.std_id = 19;
-			can_frame.dlc = 1;
-			can_frame.data[0] = 1;
+			can_frame.dlc = 8;
+			can_frame.rtr = 0;
+			can_frame.ide = 0;
+			
+			uint32ToUint8Array_LE(adc_data.channel3, &can_frame.data[0]);
+			uint32ToUint8Array_LE(adc_data.channel3, &can_frame.data[4]);
+			
 			ss_can_send(	1,
 							&can_frame);
-
-			//ss_pwm_write(pwm_pin, k);
-			//k = (k < 100)? k + 10 : 0;
 		}	
 
 		if (!is_fifo_empty(&can_receive_fifos[0])) {
@@ -82,17 +90,22 @@ int main(void)
 
 			switch(can_frame.std_id) {
 				case 0x123:
+					/*
 					ssvesc_handle(	&can_frame,
 									pwm_pin,
 									dir_pin,
 									en_pin);
-
-					ss_io_write(PIN('C', 0), SS_GPIO_TOGGLE);
+					*/
+					ss_led_dbg1_toggle();
 					break;
 
 				default: break;
 			}
 			 
+		}
+
+		if (data_received()) {
+			readData(&adc_data);
 		}
 		
 	}

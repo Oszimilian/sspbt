@@ -16,5 +16,7 @@ uint16_t ss_io_init(uint16_t pin_id, uint8_t mode);
 
 void ss_io_write(uint16_t pin_id, uint8_t value);
 
+uint16_t ss_io_read(uint16_t pin_id);
+
 #endif
 
